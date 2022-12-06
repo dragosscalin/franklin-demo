@@ -10,7 +10,6 @@ export default function decorate(block) {
     }
   
     rows.forEach((row) => {
-      console.log("row");
       row.classList.add('columns-row');
       const columns = Array.from(row.children);
       columns.forEach((column) => {
