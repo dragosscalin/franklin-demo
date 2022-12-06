@@ -1,0 +1,33 @@
+.videos > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.videos img {
+    width: 100%;
+}
+
+.videos video {
+    width: 100%;
+}
+
+.videos {
+    padding: 0px 0px 0px 0px;
+}
+
+@media (min-width: 900px) {
+    .videos > div {
+        display: flex;
+        align-items: center;
+        flex-direction: unset;
+    }
+
+    .videos > div > div {
+        flex: 1;
+        margin-left: 32px;
+    }
+
+    .videos > div > div:first-of-type {
+        margin-left: unset;
+    }
+}
