@@ -529,10 +529,6 @@ export async function waitForLCP(lcpBlocks) {
  */
 
 export function loadHeader(header) {
-  const headerBlock = buildBlock('header', '');
-  header.append(headerBlock);
-  decorateBlock(headerBlock);
-  return loadBlock(headerBlock);
 }
 
 /**
@@ -540,10 +536,6 @@ export function loadHeader(header) {
  */
 
 export function loadFooter(footer) {
-  const footerBlock = buildBlock('footer', '');
-  footer.append(footerBlock);
-  decorateBlock(footerBlock);
-  return loadBlock(footerBlock);
 }
 
 /**
