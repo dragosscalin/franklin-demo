@@ -23,3 +23,11 @@
         margin-left: unset;
     }
 }
+
+.columns.title > div > div:nth-child(2) {
+    flex: unset;
+}
+
+.columns.title > div > div:nth-child(2) svg {
+    transform: scale(2) translate(-40px);
+}
