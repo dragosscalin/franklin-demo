@@ -1,7 +1,6 @@
 export default function decorate(block) {
     const cols = [...block.firstElementChild.children];
     const rows = Array.from(block.children);
-    console.log(rows.length)
     let numberOfColumns = 0;
     if (rows[0]) {
       numberOfColumns = rows[0].children.length;
@@ -16,21 +15,20 @@ export default function decorate(block) {
       const columns = Array.from(row.children);
       columns.forEach((column) => {
         column.classList.add('column');
-        console.log(column);
         const a = column.querySelector('a');
-        if ((a.href.endsWith('.mp4'))) {
+        if ((a && a.href.endsWith('.mp4'))) {
           transformLinkToAnimation(a);
         } 
       });
     });
   
   }
-  export function transformLinkToAnimation(animation) {
+
+export function transformLinkToAnimation(animation) {
     if (!animation || !animation.href.includes('.mp4')) {
       return null;
     }
     const params = new URL(animation.href).searchParams;
-    console.log(params);
     const attribs = {};
     ['playsinline', 'loop', 'muted', 'controls'].forEach((p) => {
       if (params.get(p) !== 'false') attribs[p] = '';
@@ -45,26 +43,26 @@ export default function decorate(block) {
     const videoUrl = new URL(animation.href);
     const helixId = videoUrl.hostname.includes('hlx.blob.core') ? videoUrl.pathname.split('/')[2] : videoUrl.pathname.split('media_')[1].split('.')[0];
     const videoHref = `./media_${helixId}.mp4`;
-    const $video = createTag('video', attribs);
-    $video.innerHTML = `<source src="${videoHref}" type="video/mp4">`;
+    const demoVideo = createTag('video', attribs);
+    demoVideo.innerHTML = `<source src="${videoHref}" type="video/mp4">`;
     const $innerDiv = animation.closest('div');
-    $innerDiv.prepend($video);
+    $innerDiv.prepend(demoVideo);
     $innerDiv.classList.add('hero-animation-overlay');
-    animation.replaceWith($video);
+    animation.replaceWith(demoVideo);
     // autoplay animation
-    $video.addEventListener('canplay', () => {
-      $video.muted = true;
-      $video.play();
+    demoVideo.addEventListener('canplay', () => {
+      demoVideo.muted = true;
+      demoVideo.play();
     });
-    return $video;
-  }
+    return demoVideo;
+}
   
-  export function createTag(name, attrs) {
+export function createTag(name, attrs) {
     const el = document.createElement(name);
     if (typeof attrs === 'object') {
-      for (const [key, value] of Object.entries(attrs)) {
+        for (const [key, value] of Object.entries(attrs)) {
         el.setAttribute(key, value);
-      }
+        }
     }
     return el;
-  }
+}
