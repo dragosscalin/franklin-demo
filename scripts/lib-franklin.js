@@ -529,14 +529,14 @@ export async function waitForLCP(lcpBlocks) {
  * loads a block named 'header' into header
  */
 
- export function loadHeader(header) {
+ export function loadHeader() {
 }
 
 /**
  * loads a block named 'footer' into footer
  */
 
-export function loadFooter(footer) {
+export function loadFooter() {
 }
 
 /**

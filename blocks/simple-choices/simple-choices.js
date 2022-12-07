@@ -1,6 +1,11 @@
+const recordOption = (text) => {
+  console.log(text);
+  return false;
+};
+
 export default function decorate(block) {
-  console.log(block);
-  block.querySelectorAll(':scope div div').forEach((child) => {
-    console.log(child);
+  block.querySelectorAll(':scope div a').forEach((child) => {
+    child.href = '#';
+    child.addEventListener('click',() => recordOption(child.text));
   });
 }
