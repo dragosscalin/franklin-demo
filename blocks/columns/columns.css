@@ -1,13 +1,4 @@
-.columns > div {
-    display: flex;
-    flex-direction: column;
-}
 
-.columns img {
-    width: 100%;
-}
-
-@media (min-width: 900px) {
     .columns > div {
         display: flex;
         align-items: center;
@@ -22,12 +13,8 @@
     .columns > div > div:first-of-type {
         margin-left: unset;
     }
-}
+
 
 .columns.title > div > div:nth-child(2) {
     flex: unset;
-}
-
-.columns.title > div > div:nth-child(2) svg {
-    transform: scale(2) translate(-40px);
 }
