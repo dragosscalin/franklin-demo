@@ -22,6 +22,12 @@ const recordOption = (text) => {
 export default function decorate(block) {
   block.querySelectorAll(':scope div a').forEach((child) => {
     child.href = '#';
-    child.addEventListener('click', () => recordOption(child.text));
+    child.addEventListener('click', () => {
+      let hiddenDivs = document.getElementsByClassName("hidden");
+      if (hiddenDivs.length > 0) {
+        hiddenDivs[0].style.display = 'block';
+      }
+      recordOption(child.text);
+    });
   });
 }
