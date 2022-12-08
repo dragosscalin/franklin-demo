@@ -20,17 +20,9 @@
 }
 
 .check-image {
-    position: fixed;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center
+    position: absolute;
 }
 
 picture {
-    vertical-align: center;
-    text-align: center;
     display: flex;
-    align-items: center;
-    justify-content: center
 }
