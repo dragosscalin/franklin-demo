@@ -242,3 +242,6 @@ main h2 img {
   height: var(--heading-font-size-xl);
 }
 
+.hidden {
+  display: none
+}
