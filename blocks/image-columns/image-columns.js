@@ -5,6 +5,5 @@ export default function decorate(block) {
     rows.forEach((row) => {
         const columns = Array.from(row.children);
         columns[0].classList.add('check-image');
-        console.log(columns[0]);
     })
 }
