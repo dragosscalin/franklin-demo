@@ -6,6 +6,7 @@ const recordOption = (text) => {
       feature: document.querySelector('meta[name="feature"]').content,
       feedback: text,
     },
+    type: 'aem-cm-exp',
   };
 
   fetch('/feedback-form', {
