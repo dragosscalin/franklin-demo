@@ -16,6 +16,8 @@ const recordOption = (text) => {
     body: JSON.stringify(payload),
   });
 
+  window.parent.postMessage(payload, '*');
+
   return false;
 };
 
